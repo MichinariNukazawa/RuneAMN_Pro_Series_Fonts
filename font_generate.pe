@@ -1,0 +1,128 @@
+#!/usr/bin/fontforge -script
+#
+# base script by
+# mashabow＠しろもじ作業室（http://shiromoji.net, mashabow@shiromoji.net）
+#
+
+Print ("start fontforge.\n")
+
+if ($argc != 7)
+  Print("usage: fontforge -script " + $0 + " [fontname] [version] $(Width) $(Height) $(baseline) $(isAssignLower) ")
+  Quit(1)
+endif
+
+_fontName	= $1
+_version	= $2
+_width		= Strtol($3)
+_Height		= Strtol($4) # 未使用
+_baseline	= Strtol($5)
+_isAssignLower = $6
+
+_fontfilename =  _fontName + "_" + _version + ".otf"
+_importfiles  = "FontSources/glyphs_" + _fontName + "/u*.svg"
+
+
+New()
+
+# .notdef作成
+Select(0x0000)
+SetWidth(_width)
+SetGlyphName(".notdef")
+
+# エンコードにUnicodeを指定
+Reencode("unicode")
+
+
+# 半角文字の高さ／深さ(ベースライン)設定
+Select(0u0020, 0u007e)
+ScaleToEm((1000 - _baseline), _baseline)
+
+
+
+# SVGをすべてインポート
+Import(_importfiles, 0)
+
+## デザイン上の各種設定
+SelectAll()
+# 自動ヒントづけOFF
+#DontAutoHint()
+# パスの統合
+RemoveOverlap()
+# 整数値に丸める
+RoundToInt()
+
+
+
+# 大文字を小文字に(リファレンス)コピーする
+if ( "yes" == _isAssignLower)
+	_i = 0;
+	while ( _i < 26 )
+		_ucSrc =  ( _i + 0u0041)
+		_ucDst =  ( _i + 0u0061)
+		Select(_ucSrc); CopyReference(); Select(_ucDst); Paste()
+		++_i
+	endloop
+endif
+
+# 半角スペース作成
+Select(0u0020)
+SetWidth(_width)
+
+# 全角スペース作成
+Select(0u3000)
+SetWidth(1000)
+
+
+
+
+# ディセント(フォント下端)
+SetOS2Value("WinDescentIsOffset"  , 0)
+SetOS2Value("HHeadDescentIsOffset", 0)
+SetOS2Value("WinDescent"  , 0)
+SetOS2Value("HHeadDescent", 0)
+# アセント(フォント高さ)
+SetOS2Value("WinAscentIsOffset", 0)
+SetOS2Value("HHeadAscentIsOffset" , 0)
+SetOS2Value("WinAscent", 1000)
+SetOS2Value("HHeadAscent" , 1000)
+
+
+AutoHint()
+
+# gasp can use only ttf.
+# 0x0001 gridfit
+# 0x0002 grayscale
+# 0x0004 symmetric gridfit
+# 0x0008 symmetric smoothing
+# A flag value of 0 means neither grid-fit nor anti-alias
+# A flag value of 1 means grid-fit but no anti-alias.
+# A flag value of 2 means no grid-fit but anti-alias.
+# A flag value of 3 means both grid-fit and anti-alias.
+# SetGasp(8,2,16,1,65535,3)
+
+
+# 半角文字の文字幅設定
+#Select(0u0020, 0u007e, 0uff61, 0uff9f)
+Select(0u0020, 0u007e)
+SetVWidth(1000)
+SetWidth(_width)
+
+
+
+
+# フォント情報設定
+# CIDSetFontNames(fontname[,family[,fullname[,weight[,copyright-notice]]]])
+SetFontNames(_fontName,\
+             _fontName,\
+             _fontName,\
+             "Regular",\
+             "© 2014 Michinari.Nukazawa",\
+             _version) 
+
+# OTF生成
+Generate(_fontfilename)
+Print("generated: "+ _fontfilename)
+
+Close()
+
+Quit()

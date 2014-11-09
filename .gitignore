@@ -1,0 +1,7 @@
+*~
+*.zip
+*.log
+FontSources/*
+*.otf
+*.ttf
+
