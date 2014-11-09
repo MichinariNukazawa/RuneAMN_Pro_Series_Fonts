@@ -91,7 +91,7 @@ This svg splitter script LICENSE is the unknown.
 
 Develop by Michinari.Nukazawa, in Project "daisy bell".
 [ghpages_index]: http://michinarinukazawa.github.io/RuneAMN_Pro_Series_Fonts/
-[typefaces_manuals_pdf]: https://github.com/MichinariNukazawa/RuneAMN_Series_Fonts/blob/gh-pages/書体見本_マニュアル_製品評価版.pdf
+[typefaces_manuals_pdf]: https://github.com/MichinariNukazawa/RuneAMN_Pro_Series_Fonts/blob/gh-pages/書体見本_マニュアル_製品評価版.pdf?raw=true
 [pixiv_nukazawa_index]: http://www.pixiv.net/member.php?id=11951957
 [ghpages_index_RuneAssignMN_Series_Fonts]: http://michinarinukazawa.github.io/RuneAssignMN_Series_Fonts/
 [ghpages_index_OlChikiAssignMN_Series_Fonts]: http://michinarinukazawa.github.io/OlChikiAssignMN_Series_Fonts/
