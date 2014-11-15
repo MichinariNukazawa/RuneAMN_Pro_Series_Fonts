@@ -1,6 +1,6 @@
 /** 
  * 非表示のパス・レイヤを削除する。
- * Adobe Illustrater script(JavaScript).
+ * Adobe Illustrator script(JavaScript).
  * Michinari.Nukazawa@gmail.com
  * License: BSD class2
  *
