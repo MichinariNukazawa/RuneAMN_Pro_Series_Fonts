@@ -35,7 +35,7 @@ RuneAssignMN_Pro Series Fontsの特徴:
  ライセンスについて、よくわからない場合は、気軽に作者へ[メール(michinari.nukazawa@gmail.com)][mailto]にて、お問い合わせください。  
 
 ##extra/ ディレクトリについて。
-extra/ディレクトリ内のライセンス文を参照ください。
+extra/ディレクトリ内のライセンス文をご参照ください。
 
 ##フォント制作手順
 全自動ではなく、手作業が含まれています。  
@@ -62,6 +62,7 @@ UbuntuPPA版の新しいFontForge(FontForge2014年版)を使用することを�
 
 しろもじ作業室 の日本語かなフォント作成記事とスクリプト  
 http://d.hatena.ne.jp/mashabow/20120314/1331744357
+
 本プロジェクトの2014年版に含まれているスクリプト「svg_splitter.pl」は、
 『mashabow＠しろもじ作業室（http://shiromoji.net, mashabow@shiromoji.net）』  
 様の公開してくださっているスクリプトを元に作成したものです。  
