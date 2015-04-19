@@ -29,7 +29,7 @@ RuneAssignMN_Pro Series Fontsの特徴:
  ライセンスについて、よくわからない場合は、気軽に作者へ[メール(michinari.nukazawa@gmail.com)][mailto]にて、お問い合わせください。  
 
 ##スクリプトのライセンス
-svg_splitter.plを除いて、すべて"BSD Class-2"ライセンスです。  
+svg_splitter.plを除いて、すべて"2-clause BSD license"ライセンスです。  
 (もちろん、あなたのデザインとこのスクリプトで作成したフォントは、あなたが任意のライセンスで公開（あるいは販売)することができます。)  
 
 ##スクリプト「svg_splitter.pl」について。
@@ -82,7 +82,7 @@ http://www.slowgun.org/abc/ts12.html
 ##LICENCE About
 Please read Japanese licence text.  
 Font use illustration and design is ratail product, "not free" and "script check only use".  
-Build script is free (BSD Class-2).
+Build script is free (2-clause BSD license).
 but, svg splitter is original: http://d.hatena.ne.jp/mashabow/20120314/1331744357
 This svg splitter script LICENSE is the unknown.
 
