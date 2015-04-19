@@ -1,0 +1,9 @@
+// 
+FontName:RuneAMN_Serif Width:500 Height:1000 baseline:25 isFree:yes isAssignLower:yes
+
+A B C D E F G
+H I J K L M N
+O P Q R S T U
+V W X Y Z
+
+

@@ -1,0 +1,48 @@
+% brief : Manual build for RuneAMN_Pro series fonts.
+% usage : pdflatex book_of_RuneAMN_Pro_Fonts.tex
+%
+% author : MichinariNukazawa / "project daisy bell"
+% 	michinari.nukazawa@gmail.com
+% 	https://github.com/MichinariNukazawa/RuneAMN_Pro_Series_Fonts
+% license : 2-clause BSD license
+%
+% memo: force quit is "x" or "\stop"
+
+\documentclass[flegn]{article}
+\usepackage{pdfpages}
+
+\begin{document}
+\includepdf[pages=-]{./rune_book_commons/commons_full/TitleCover.pdf}
+\includepdf[pages=-]{./rune_book_commons/commons/RuneToAssignLatinList.pdf}
+
+\includepdf[pages=-]{./rune_book_commons/commons/ChapterTitle_Free.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces/FreeVersions.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces/Sans.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces/SansHumanicLike.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces/Serif.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces/KnifeA_.pdf}
+
+\includepdf[pages=-]{./rune_book_commons/commons/ChapterTitle_Pro.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/Blackletter.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/BlackletterPLow.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/Bold.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/BoldDw.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/BoldDwCorner.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/FlowerSerif.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/GitenRuneStamp.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/Rounded.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/SemiCursive.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/SerifEx.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/KnifeBandC.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/KnifeD_.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/StencilArmy.pdf}
+\includepdf[pages=-]{./rune_book_typefaces/typefaces_full/StencilSimple.pdf}
+
+\includepdf[pages=-]{./rune_book_commons/commons/Install.pdf}
+\includepdf[pages=-]{./rune_book_commons/commons/Used.pdf}
+\includepdf[pages=-]{./rune_book_commons/commons/PostScript.pdf}
+\includepdf[pages=-]{./rune_book_commons/commons/Colophon.pdf}
+\includepdf[pages=-]{./rune_book_commons/commons/BackCover.pdf}
+\end{document}
+
+

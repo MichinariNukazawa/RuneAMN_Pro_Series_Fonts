@@ -1,4 +1,13 @@
 #!/bin/perl
+#
+# usage : perl ./fonts_generate.pl
+#
+# author : MichinariNukazawa / "project daisy bell"
+# 	michinari.nukazawa@gmail.com
+# 	https://github.com/MichinariNukazawa/RuneAMN_Pro_Series_Fonts
+# license : 2-clause BSD license
+#
+
 use utf8;
 use open ":utf8";
 
@@ -13,7 +22,8 @@ printf("path:$dirWorkRoot\n");
 
 # (バージョン番号に使うので統一するために取得しておく)
 use POSIX 'strftime';
-my $date = strftime( "%Y%m%d%H%M%S", localtime);
+my $date = strftime( "%Y%m%d", localtime);
+#my $date = strftime( "%Y%m%d%H%M%S", localtime);
 
 
 
@@ -73,8 +83,10 @@ foreach $settingFile(@settingFiles){
 
 			my $fontfile = "";
 			# print "font: ". $font{FontName} . "\n";
-			if('' eq ($fontfile = &getLatestFile($font{FontName} . "_.*\\.otf", $dirWorkRoot))){
+			if('' eq ($fontfile = &getLatestFile($font{FontName} . "_.*\\.otf", $dirWorkRoot . "/releases"))){
 				$fontfile = 'PHONY'; # 擬似ターゲット
+			}else{
+				$fontfile = "releases/" . $fontfile;
 			}
 
 
@@ -82,7 +94,7 @@ foreach $settingFile(@settingFiles){
 			$make_command = "FontName=" . $font{FontName} . " "
 			. " Width=" . $font{Width} ." Height=". $font{Height} ." baseline=". $font{baseline} ." isFree=" . $font{isFree} ." isAssignLower=" .$font{isAssignLower} ." "
 			. " Version=1.${date} FontFile=${fontfile} "
-			. " make -f font.makefile ";
+			. " make -f scripts/build_mods/font.makefile ";
 
 			$ret = `$make_command`;
 			# FontForgeがエラーを返さない場合があるので、フォントファイルの存在をもって完了チェックする必要がある。
@@ -91,7 +103,7 @@ foreach $settingFile(@settingFiles){
 			}
 			print ("success makefile ret:${ret}\n");
 			
-			# フリー版フォントの一覧へ追加。
+			# フリー版フォントの一覧へ追加。 
 			if( $font{isFree} =~ m/yes/i){
 				push(@free_distributions, $font{FontName});
 			}
