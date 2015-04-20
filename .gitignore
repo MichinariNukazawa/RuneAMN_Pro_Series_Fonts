@@ -18,3 +18,7 @@ releases-static/*
 *.ttf
 *.zip
 
+#
+extra/*
+works/*
+
