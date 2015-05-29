@@ -120,7 +120,7 @@ def getSettingsFromSettingFilePath(pathSettingFile):
 	" baseline:(?P<baseline>[0-9]+)"\
 	" isFree:(?P<isFree>(yes|no)) isAssignLower:(?P<isAssignLower>(yes|no))",
 	 re.IGNORECASE)
-	reListContent = re.compile("(u[0-9]{4}|[^\s]|[\s])[\s\Z]")
+	reListContent = re.compile("(u[0-9a-fA-F]{4}|[^\s])[\s\Z]+")
 
 	isUcList = False
 	isCountRow = False
@@ -165,14 +165,15 @@ def getSettingsFromSettingFilePath(pathSettingFile):
  @param ユニコードコードポイント文字列(ex.u"0024")
  		(Todo: エラー処理)
 """
-reAlphabet = re.compile("([^\s])")
-reUnicodeCodePoint = re.compile("u([0-9]{4})")
+reAlphabet = re.compile("([^\s])\Z")
+reUnicodeCodePoint = re.compile("u([0-9a-fA-F]{4})")
 def getUncodeCodepointFromLatin(latin):
 	if reAlphabet.match(latin):
 		codePoint = '%04x' % ord(latin)
 		return codePoint
 	elif reUnicodeCodePoint.match(latin):
-		return reUnicodeCodePoint.group()
+		m = reUnicodeCodePoint.match(latin)
+		return m.group(1)
 	else:
 		print("error: invalid string:")
 		pprint(latin)
