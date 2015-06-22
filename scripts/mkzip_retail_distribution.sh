@@ -100,7 +100,7 @@ fi
 find "$nameZip/extra/" -name ".*" | xargs -i rm -rf {}
 find "$nameZip/extra/" -name "*~" | xargs -i rm -rf {}
 # 個別のファイル
-cp "docs/RuneToAssignLatinList_20141130.jpg" "$nameZip/割り当て表.jpg"
+cp "docs/etcs/AssignListRuneToLatin.jpg" "$nameZip/割り当て表.jpg"
 cp "docs/etcs/はじめにお読みください.txt" "$nameZip/"
 cp "docs/etcs/Fonts.lnk" "$nameZip/"
 cp "docs/etcs/インストール.jpg" "$nameZip/"
