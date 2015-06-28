@@ -10,6 +10,8 @@ RuneAssignMN_Pro Series Fontsの特徴:
 ふつうの英文を用意し、このフォントを使うだけで、簡単にルーン文字で書かれた文章を"でっちあげる"ことができます。  
 
 フォントの書体デザインは、  
+ [RuneAMN_Pro_Series_Fonts][ghpages_RuneAMN_Pro]  
+ および  
  [製品評価版 書体見本(PDF)][typefaces_manuals_pdf]  
  または  
  [Pixiv][pixiv_nukazawa_index]  
@@ -95,7 +97,7 @@ Build script is free (2-clause BSD license).
 Develop by Michinari.Nukazawa, in project "daisy bell".
 [pixiv_booth_project_daisy_bell]: https://daisy-bell.booth.pm/
 [sourceforge_project_daisy_bell]: http://sourceforge.jp/projects/daisybell-fonts/
-[ghpages_index]: http://michinarinukazawa.github.io/RuneAMN_Pro_Series_Fonts/
+[ghpages_RuneAMN_Pro]: http://michinarinukazawa.github.io/RuneAMN_Pro_Series_Fonts/docs/runeamn_pro.html
 [typefaces_manuals_pdf]: https://github.com/MichinariNukazawa/RuneAMN_Pro_Series_Fonts/blob/gh-pages/releases/book_of_RuneAMN_Pro_Fonts_limited.pdf?raw=true
 [pixiv_nukazawa_index]: http://www.pixiv.net/member.php?id=11951957
 [ghpages_index_RuneAssignMN_Series_Fonts]: http://michinarinukazawa.github.io/RuneAssignMN_Series_Fonts/
