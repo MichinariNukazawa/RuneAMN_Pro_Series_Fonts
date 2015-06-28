@@ -22,7 +22,7 @@ elif [ 3 -eq $# ] ; then
 else
 	echo "error: invalid args: \"$@\"(num:$#)" 1>&2
 	# "example: ./mkzip_free.sh RuneAMN 1.20140809235940 [retail]"
-	echo "Usage: ./(this) FontSeriesName Version"
+	echo "Usage: ./(this) FontSeriesName Version [retail]"
 	exit 1
 fi
 
@@ -78,6 +78,8 @@ if [ "free" = $Kind ] ; then
 	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_Pro"*".otf" > /dev/null
 	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_SerifEx"*".otf" > /dev/null
 fi
+
+# build .ttf fonts
 pushd ${nameZip}"/fonts"
 mkdir "ttf"
 find -name "*.otf" | xargs -I{} fontforge -lang=py -script ${PathProjectRoot}"/scripts/mods/otf2ttf.py" {}
@@ -90,6 +92,7 @@ if [ "free" = $Kind ] ; then
 	cp "releases/book_of_RuneAMN_Pro_Fonts_limited.pdf" "$nameZip/書体見本_マニュアル_製品評価版.pdf"
 else
 	cp "releases/book_of_RuneAMN_Pro_Fonts.pdf" "$nameZip/書体見本_マニュアル.pdf"
+	cp "docs/etcs/LICENSE.txt" "$nameZip/ライセンス.txt"
 fi
 # オマケを添付して不要な隠しファイルを除去する
 cp -R "extra/" "$nameZip/"
@@ -100,11 +103,10 @@ fi
 find "$nameZip/extra/" -name ".*" | xargs -i rm -rf {}
 find "$nameZip/extra/" -name "*~" | xargs -i rm -rf {}
 # 個別のファイル
-cp "docs/etcs/AssignListRuneToLatin.jpg" "$nameZip/割り当て表.jpg"
-cp "docs/etcs/はじめにお読みください.txt" "$nameZip/"
+cp "docs/etcs/AssignListRuneToLatin_ja.jpg" "$nameZip/割り当て表.jpg"
+cp "docs/etcs/README_ja.txt" "$nameZip/はじめにお読みください.txt"
 cp "docs/etcs/Fonts.lnk" "$nameZip/"
-cp "docs/etcs/インストール.jpg" "$nameZip/"
-cp "docs/etcs/LICENSE.txt" "$nameZip/ライセンス.txt"
+cp "docs/etcs/Install_ja.jpg" "$nameZip/インストール.jpg"
 
 #### zipする前に、ファイル名をCP932でエンコーディング変換する
 convmv -f utf8 -t cp932 -r --notest "$nameZip/"

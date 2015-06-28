@@ -5,9 +5,6 @@ http://generator.lorem-ipsum.info/
 RuneAMNフォントなどで長文が欲しい場合にご使用ください。
 (もちろん他のことに使ってもかまいません。ただし無保証です。)
 
-
-Lorem ipsum dolor sit amet vel at rationibus adipiscing te minimum maluisset necessitatibus sit Ex eos tantas inimicus incorrupte ei sea hinc timeam oportere mnesarchum cum ad Per ne elit wisi efficiantur eu vivendum qualisque sed Cum no hinc lobortis scripserit sea ne alia nihil meliore
-
 Lorem ipsum dolor sit amet, vel at rationibus adipiscing, te minimum maluisset necessitatibus sit. Ex eos tantas inimicus incorrupte, ei sea hinc timeam, oportere mnesarchum cum ad. Per ne elit wisi efficiantur, eu vivendum qualisque sed. Cum no hinc lobortis scripserit, sea ne alia nihil meliore.
 
 Illum singulis mel in, vel augue laudem gubergren ei. Te nec iudico dissentiet, ei vix sapientem explicari imperdiet. Has et putant tractatos. His te harum appareat, latine adipisci senserit te has. Id case honestatis est, per dolores accusamus no.
