@@ -100,6 +100,13 @@ if [ 0 -ne $? ] ; then
 	echo "error copy extra."
 	exit -1
 fi
+if [ "retail" = $Kind ] ; then
+	cp -r extra_patchRetail/* "$nameZip/extra"
+	if [ 0 -ne $? ] ; then
+		echo "error copy extra_patchRetail."
+		exit -1
+	fi
+fi
 find "$nameZip/extra/" -name ".*" | xargs -i rm -rf {}
 find "$nameZip/extra/" -name "*~" | xargs -i rm -rf {}
 # 個別のファイル
