@@ -23,25 +23,25 @@ import os
 
 def main():
 	print("start fontforge.\n")
-	
+
 	if(not(7 == len(sys.argv))):
 		print("error: args length :%d\n" % len(sys.argv))
 		sys.exit(-1)
-	
+
 	fontName = sys.argv[1]
 	version  = sys.argv[2]
 	width    = int(sys.argv[3])
 	height   = int(sys.argv[4])
 	baseline = int(sys.argv[5])
 	isAssignLower = sys.argv[6]
-	
+
 	fontFilename = fontName + "_" + version + ".otf"
 	#inportFiles = "FontSources/glyphs_" + fontName + "/u*.svg"
 	dirImportFiles = "FontSources/glyphs_" + fontName + ""
-	
+
 	# create new font.
 	font = fontforge.font()
-	
+
 	# エンコードにUnicodeを指定
 	font.encoding = "unicode"
 
@@ -54,6 +54,12 @@ def main():
 	# .notdef作成
 	glyphSpace = font.createChar(0x0000)
 	glyphSpace.glyphname = ".notdef"
+
+	# create empty '.' and ',' (Runic design font fix)
+	glyphSpace = font.createChar(0x002c)
+	glyphSpace.width = width
+	glyphSpace = font.createChar(0x002e)
+	glyphSpace.width = width
 
 	# SVGをすべてインポート
 	files = os.listdir(dirImportFiles)
@@ -100,7 +106,7 @@ def main():
 	font.os2_typodescent = (-baseline)
 	font.os2_windescent = baseline
 	font.hhea_descent = (-baseline)
-	
+
 	# ascent
 	font.os2_typoascent = height - baseline
 	font.os2_winascent = height - baseline
@@ -118,17 +124,17 @@ def main():
 	font.round()
 	# アウトラインの向きを修正
 	font.correctDirection()
-	
+
 	font.selection.none()
 	font.selection.select(("ranges",None), 0x0020, 0x007e)
 	for glyph in font.selection.byGlyphs:
 		# 自動ヒント有効化
 		glyph.autoHint()
-		
+
 		# 半角文字の文字幅設定
 		glyph.vwidth = 1000
 		glyph.width = width
-			
+
 	# フォント情報設定
 	font.fontname = fontName
 	font.familyname = fontName
@@ -136,7 +142,7 @@ def main():
 	font.weight = "Regular"
 	font.copyright = "© 2015 Michinari.Nukazawa"
 	font.version = version
-	
+
 	font.generate("releases/" + fontFilename, '', ('short-post', 'opentype', 'PfEd-lookups'))
 
 	print ("generated: "+ fontFilename)
