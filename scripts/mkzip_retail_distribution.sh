@@ -112,7 +112,7 @@ find "$nameZip/extra/" -name "*~" | xargs -i rm -rf {}
 # 個別のファイル
 cp "docs/etcs/AssignListRuneToLatin_ja.jpg" "$nameZip/割り当て表.jpg"
 cp "docs/etcs/README_ja.txt" "$nameZip/はじめにお読みください.txt"
-cp "docs/etcs/Fonts.lnk" "$nameZip/"
+cp "docs/etcs/Fonts_link_win.lnk" "$nameZip/"
 cp "docs/etcs/Install_ja.jpg" "$nameZip/インストール.jpg"
 
 #### zipする前に、ファイル名をCP932でエンコーディング変換する
