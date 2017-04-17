@@ -120,7 +120,7 @@ def getSettingsFromSettingFilePath(pathSettingFile):
 	" baseline:(?P<baseline>[0-9]+)"\
 	" isFree:(?P<isFree>(yes|no)) isAssignLower:(?P<isAssignLower>(yes|no))",
 	 re.IGNORECASE)
-	reListContent = re.compile("(u[0-9a-fA-F]{4}|[^\s])[\s\Z]+")
+	reListContent = re.compile('(u[0-9a-fA-F]{4}|[^\s]|[\s])[\s]')
 
 	isUcList = False
 	isCountRow = False
