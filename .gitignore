@@ -10,16 +10,18 @@
 */*~
 
 # binarys
-FontSources/*
-docs/book_of_rune/*
-releases/*
-releases-static/*
+FontSources/
+docs/book_of_rune/
+releases/
+releases-static/
 *.otf
 *.ttf
 *.zip
 
 #
-extra/*
-works/*
-extra_patchRetail/*
+extra/
+work/
+extra_patchRetail/
+build/
+library/
 
