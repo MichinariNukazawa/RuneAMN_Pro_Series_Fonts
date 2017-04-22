@@ -81,7 +81,7 @@ foreach $settingFile(@settingFiles){
 			. " Width=" . $font{Width} . " Height=". $font{Height} . " baseline=" . $font{baseline} 
 			. " isFree=" . $font{isFree} . " isAssignLower=" . $font{isAssignLower} 
 			. " Version=1.${date} FontFile=${fontfile} "
-			. " make -f scripts/build_mods/font.makefile ";
+			. " make -f scripts/build_mods/font.Makefile ";
 
 			# call to the make.
 			my $ret = system("$make_command >> $pathLogFile");
