@@ -10,7 +10,7 @@ LOGFILE=./fontforge.log
 # 手動修正済みグリフ画像の一覧
 GLYPH_PATCHS=$(shell if [ -d FontSources/$(FontName)_patchGlyphs/ ] ; then find FontSources/$(FontName)_patchGlyphs/*.svg | xargs echo ; fi)
 
-$(FontFile): FontSources/$(FontName)_complete.svg FontSources/$(FontName)_list.txt $(GLYPH_PATCHS)
+$(FontFile): FontSources/$(FontName).svg FontSources/$(FontName)_list.txt $(GLYPH_PATCHS)
 	echo "" >> $(LOGFILE)
 	date +'%Y/%m/%d %T ' >> $(LOGFILE)
 	echo "$(FontName)" >> $(LOGFILE)
@@ -18,7 +18,7 @@ $(FontFile): FontSources/$(FontName)_complete.svg FontSources/$(FontName)_list.t
 	rm -rf FontSources/glyphs_$(FontName)/
 	mkdir FontSources/glyphs_$(FontName)/
 	python3 scripts/build_mods/svg_splitter.py \
-		 FontSources/$(FontName)_complete.svg FontSources/$(FontName)_list.txt \
+		 FontSources/$(FontName).svg FontSources/$(FontName)_list.txt \
 		 --output_dir="FontSources/glyphs_$(FontName)/" 
 	# 手動修正ファイルがあれば、上書きする
 	-cp -r FontSources/glyphs_$(FontName)_patchGlyphs/* FontSources/glyphs_$(FontName)/ 2>>$(LOGFILE)
