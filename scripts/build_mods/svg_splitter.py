@@ -3,7 +3,7 @@
 #
 # brief : SVG image splitter for generated "RuneAMN Series" font and other.
 # 	SVG画像ファイルをグリフごとに分割する
-# usage : this_script.py RuneAMN.svg FontSources/RuneAMN_KnifeA_list.txt \
+# usage : this_script.py RuneAMN.svg font_source/RuneAMN_KnifeA_list.txt \
 # 	--output_dir=amn/ --width=800 --height=800
 #
 # author : MichinariNukazawa / "project daisy bell"

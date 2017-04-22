@@ -36,8 +36,8 @@ def main():
 	isAssignLower = sys.argv[6]
 
 	fontFilename = fontName + "_" + version + ".otf"
-	#inportFiles = "FontSources/glyphs_" + fontName + "/u*.svg"
-	dirImportFiles = "FontSources/glyphs_" + fontName + ""
+	#inportFiles = "font_source/glyphs_" + fontName + "/u*.svg"
+	dirImportFiles = "font_source/glyphs_" + fontName + ""
 
 	# create new font.
 	font = fontforge.font()

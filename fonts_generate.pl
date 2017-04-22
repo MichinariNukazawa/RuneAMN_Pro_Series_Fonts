@@ -39,7 +39,7 @@ if ($#settingFiles < 0){
 # フォントごとに設定を付与してMakeを呼び出す
 foreach $settingFile(@settingFiles){
 
-	my $pathSettingFile = "FontSources/" . $settingFile;
+	my $pathSettingFile = "font_source/" . $settingFile;
 	open(DATAFILE, "<", $pathSettingFile) or die("Error. nothing pathSettingFile:\"$pathSettingFile\"");
 
 	while (my $line = <DATAFILE>){
@@ -139,7 +139,7 @@ sub getSettingFiles(){
 	my $dirWorkRoot = $_[0];
 	my @list = ();
 
-	my $dir = $dirWorkRoot . "/FontSources/";
+	my $dir = $dirWorkRoot . "/font_source/";
 	opendir(DIRHANDLE, $dir) or die("Error. dir:\"$dir\"");
 
 	foreach(readdir(DIRHANDLE)){
