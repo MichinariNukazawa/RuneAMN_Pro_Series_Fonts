@@ -13,10 +13,13 @@
 font_source/
 docs/book_of_rune/
 releases/
-releases-static/
+release_static/
 *.otf
 *.ttf
 *.zip
+
+docs/
+releases/
 
 #
 extra/

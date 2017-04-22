@@ -68,7 +68,7 @@ if [ 0 -ne $? ] ; then
 	echo "error find cp fonts"
 	exit -1
 fi
-find "releases-static/" -name "${FontSeriesName}*.otf" | xargs -i cp {} "${nameZip}/fonts/"
+find "release_static/" -name "${FontSeriesName}*.otf" | xargs -i cp {} "${nameZip}/fonts/"
 if [ 0 -ne $? ] ; then
 	echo "error find cp fonts"
 	exit -1
