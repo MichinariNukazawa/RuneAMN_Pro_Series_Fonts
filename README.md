@@ -95,6 +95,7 @@ Build script is free (2-clause BSD license).
 [michinari.nukazawa@gmail.com][mailto]
 
 Develop by Michinari.Nukazawa, in project "daisy bell".
+
 [pixiv_booth_project_daisy_bell]: https://daisy-bell.booth.pm/
 [sourceforge_project_daisy_bell]: http://sourceforge.jp/projects/daisybell-fonts/
 [ghpages_RuneAMN_Pro]: http://michinarinukazawa.github.io/RuneAMN_Pro_Series_Fonts/docs/runeamn_pro.html
@@ -104,5 +105,4 @@ Develop by Michinari.Nukazawa, in project "daisy bell".
 [ghpages_index_OlChikiAssignMN_Series_Fonts]: http://michinarinukazawa.github.io/OlChikiAssignMN_Series_Fonts/
 [blog_article]: http://blog.michinari-nukazawa.com/
 [mailto]: mailto:michinari.nukazawa@gmail.com
-
 
