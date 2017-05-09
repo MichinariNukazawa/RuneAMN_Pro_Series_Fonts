@@ -1,15 +1,15 @@
 RuneAMN_Pro Series Fonts (build scripts and other). 商用イラスト・デザイン向けルーン文字フォント・ビルドスクリプト
 ====
 
-## 概要
+# 概要
 RuneAMN_Pro Series Fontsは、商用イラスト・デザイン向けルーン文字フォントです。  
 本プロジェクトでは、[project daisy bell][pixiv_booth_project_daisy_bell]がリリースしている商用フォント製品およびフリーフォントで使っているビルドスクリプトを公開しています。  
 
-RuneAssignMN_Pro Series Fontsの特徴:  
+## RuneAssignMN_Pro Series Fontsの特徴
 ラテン・アルファベットの"A〜z"にルーン文字を割り当ててあります。  
 ふつうの英文を用意し、このフォントを使うだけで、簡単にルーン文字で書かれた文章を"でっちあげる"ことができます。  
 
-フォントの書体デザインは、  
+## 書体デザイン見本等
  [RuneAMN_Pro_Series_Fonts][ghpages_RuneAMN_Pro]  
  および  
  [製品評価版 書体見本(PDF)][typefaces_manuals_pdf]  
@@ -17,30 +17,30 @@ RuneAssignMN_Pro Series Fontsの特徴:
  [Pixiv][pixiv_nukazawa_index]  
 にて見ることができます。  
 
-姉妹フォントに  
+## 姉妹フォント
 [RuneAMN_Series_Font][ghpages_index_RuneAssignMN_Series_Fonts]  
 [OlChikiAssignMN_Series_Font][ghpages_index_OlChikiAssignMN_Series_Fonts]  
 があります。  
 これらは、フリーフォントです。ビルドスクリプトおよび書体ソース画像も、フリーソフトウェアとして公開されています。  
 
 
-## ライセンス
-### スクリプトのライセンス
+# ライセンス
+## スクリプトのライセンス
 "2-clause BSD license"ライセンスです。  
 ただし、extra/以下のファイルを除きます。  
   
 もちろん、あなたのデザインとこのスクリプトで作成したフォントは、あなたが任意のライセンスで公開（あるいは販売)することができます。  
 
-### フォントのライセンス
+## フォントのライセンス
  プロジェクトに含まれている"RuneAMN_SerifEx"フォントの書体ソース画像は、ビルドスクリプトの動作確認および、ビルドスクリプト転用の際にソース画像と設定ファイルを用意するための参考資料として使うことのみを目的に、添付されているものです。  
  書体ソース画像および、そこから生成したフォントファイルを、上記の用途に外れる使い方(イラスト使用含む)することを禁じます。  
  (製品版に含まれているので、フォントとして使用する場合は購入してください。)  
  ライセンスについて、よくわからない場合は、気軽に作者へ[メール(michinari.nukazawa@gmail.com)][mailto]にて、お問い合わせください。  
 
-### extra/ ディレクトリ以下のライセンス
+## extra/ ディレクトリ以下のライセンス
 extra/ディレクトリ内のライセンス文をご参照ください。
 
-## フォント制作手順
+# フォント制作手順
 全自動ではなく、手作業が含まれています。  
 作業環境はIllustratorを除いてLinux(Ubuntu14.04)を想定しています。  
 ただし、Ubuntu14.04標準のFontForge(2012年版)では、フォントが崩れる・線が入るなどの問題が、発生する場合があります。  
@@ -60,7 +60,7 @@ UbuntuPPA版の新しいFontForge(FontForge2014年版)を使用することを�
 (ファイルの生成自体は行います。)
 
 
-## 謝辞
+# 謝辞
 以下のサイトを参考にさせていただきました。  
 
 しろもじ作業室 の日本語かなフォント作成記事とスクリプト  
@@ -87,12 +87,12 @@ IllustratorABC TIPSページの補填記事のIllustratorの設定
 http://www.slowgun.org/abc/ts12.html
 
 
-## LICENCE About
+# LICENCE About
 Please read Japanese licence text.  
 "RuneAMN_SerifEx" font is ratail product, "not free" and "script check only use".  
 Build script is free (2-clause BSD license).  
 
-## 連絡先
+# 連絡先
 [michinari.nukazawa@gmail.com][mailto]
 
 Develop by Michinari.Nukazawa, in project "daisy bell".
