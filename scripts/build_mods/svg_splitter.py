@@ -527,9 +527,6 @@ def writeSvg(svg, settings, row, col):
 
 		filepath = dirOutput + "/" + filename + ".svg"
 		f = open(filepath, 'w')
-		f.write('<?xml version=\"1.0\" standalone=\"no\"?>\n')
-		f.write('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"'
-			+' "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n')
 		f.write(docMinidom.toprettyxml())
 		f.close()
 	return
