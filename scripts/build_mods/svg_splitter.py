@@ -36,6 +36,7 @@ from pprint import pprint
 import math
 import re
 from xml.etree import ElementTree as ET
+import xml.dom.minidom
 import os
 import os.path
 
@@ -521,13 +522,15 @@ def writeSvg(svg, settings, row, col):
 		dirOutput = settings['output_dir']
 		if False == os.path.exists(dirOutput):
 			os.mkdir(dirOutput)
-	
+
+		docMinidom = xml.dom.minidom.parseString(ET.tostring(svg).decode('utf-8'))
+
 		filepath = dirOutput + "/" + filename + ".svg"
 		f = open(filepath, 'w')
 		f.write('<?xml version=\"1.0\" standalone=\"no\"?>\n')
 		f.write('<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"'
-			+' "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">')
-		f.write(ET.tostring(svg).decode('utf-8'))
+			+' "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">\n')
+		f.write(docMinidom.toprettyxml())
 		f.close()
 	return
 
