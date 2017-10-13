@@ -197,6 +197,25 @@ def getNumericFromStringHead(s):
 
 
 """
+@param 表示されないElementならばTrue
+@todo 正しくないがとりあえず目的の出力を得られる、正しくない方法
+"""
+def isVisibleElement(element):
+	#	if None != element.get('display') and 'none' == element.get('display'):
+	#	return False
+
+	fill = element.get('fill')
+	stroke = element.get('stroke')
+	#if 'none' == fill:
+	#	fill = None
+	if 'none' == stroke:
+		stroke = None
+	if 'none' == fill and None == stroke:
+		return False
+	return True
+
+
+"""
  @brief xmlツリーからSVG要素を再帰的に検出して分割処理する
  @param 分割済みデータ連想配列
  @param 設定ファイル情報(分割設定)
@@ -208,9 +227,16 @@ def ravelGroup(dstsTable, settings, svgGroup):
 	svgTransform = svgGroup.get('transform')
 	if svgTransform:
 		print('warning: not inplement transform attr.')
-	
+
 	elems = list(svgGroup)
 	for elem in elems:
+		if '{http://www.w3.org/2000/svg}g' == elem.tag:
+			if None != elem.get('display') and 'none' == elem.get('display'):
+				continue
+		else:
+			if not isVisibleElement(elem):
+				continue
+
 		if '{http://www.w3.org/2000/svg}g' == elem.tag:
 			dstsTable = ravelGroup(dstsTable, settings, elem)
 		elif '{http://www.w3.org/2000/svg}path' == elem.tag:
@@ -328,27 +354,9 @@ def moveSvgPath(svgPath, xMove, yMove):
 
 
 """
-@param 表示されないElementならばTrue
-"""
-def isVisibleElement(element):
-	fill = element.get('fill')
-	stroke = element.get('stroke')
-	if 'none' == fill:
-		fill = None
-	if 'none' == stroke:
-		stroke = None
-	if None == fill and None == stroke:
-		return False
-	return True
-
-
-"""
 @param svgRectを切り出す
 """
 def ravelRect(dstsTable, settings, svgRect):
-	if(not isVisibleElement(svgRect)):
-		return dstsTable
-
 	transform = getTransformFromSvgElem(svgRect)
 
 	x = float(svgRect.get('x'))
