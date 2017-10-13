@@ -24,7 +24,7 @@ import os
 def main():
 	print("start fontforge.\n")
 
-	if(not(7 == len(sys.argv))):
+	if(not(8 == len(sys.argv))):
 		print("error: args length :%d\n" % len(sys.argv))
 		sys.exit(-1)
 
@@ -34,10 +34,9 @@ def main():
 	height   = int(sys.argv[4])
 	baseline = int(sys.argv[5])
 	isAssignLower = sys.argv[6]
+	dirImportFiles = sys.argv[7]
 
 	fontFilename = fontName + "_" + version + ".otf"
-	#inportFiles = "font_source/glyphs_" + fontName + "/u*.svg"
-	dirImportFiles = "font_source/glyphs_" + fontName + ""
 
 	# create new font.
 	font = fontforge.font()

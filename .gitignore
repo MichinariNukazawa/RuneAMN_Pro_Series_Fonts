@@ -26,5 +26,6 @@ extra/
 work/
 extra_patchRetail/
 build/
+object/
 library/
 
