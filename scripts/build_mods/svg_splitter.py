@@ -121,7 +121,7 @@ def getSettingsFromSettingFilePath(pathSettingFile):
 	" baseline:(?P<baseline>[0-9]+)"\
 	" isFree:(?P<isFree>(yes|no)) isAssignLower:(?P<isAssignLower>(yes|no))",
 	 re.IGNORECASE)
-	reListContent = re.compile('(u[0-9a-fA-F]{4}|[^\s]|[\s])[\s]')
+	reListContent = re.compile('(u[0-9a-fA-F]{4}|u----|[^\s]|[\s])[\s]')
 
 	isUcList = False
 	isCountRow = False
@@ -154,7 +154,7 @@ def getSettingsFromSettingFilePath(pathSettingFile):
 						listContent[i] = 'u' + uc
 				settings['ucTable'].append(listContent)
 				if settings['col'] < len(listContent):
-					settings['col'] = len(listContent)
+					settings['col'] = len(listContent) 
 	return settings
 
 
@@ -328,9 +328,27 @@ def moveSvgPath(svgPath, xMove, yMove):
 
 
 """
+@param 表示されないElementならばTrue
+"""
+def isVisibleElement(element):
+	fill = element.get('fill')
+	stroke = element.get('stroke')
+	if 'none' == fill:
+		fill = None
+	if 'none' == stroke:
+		stroke = None
+	if None == fill and None == stroke:
+		return False
+	return True
+
+
+"""
 @param svgRectを切り出す
 """
 def ravelRect(dstsTable, settings, svgRect):
+	if(not isVisibleElement(svgRect)):
+		return dstsTable
+
 	transform = getTransformFromSvgElem(svgRect)
 
 	x = float(svgRect.get('x'))
