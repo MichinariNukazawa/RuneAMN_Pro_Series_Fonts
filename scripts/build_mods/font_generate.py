@@ -74,6 +74,15 @@ def main():
 			# print ("path :%s" % path)
 			font[cd].importOutlines(path)
 
+			glyph = font[cd]
+
+			# 文字幅設定
+			glyph.vwidth = 1000
+			glyph.width = width
+
+			# 自動ヒント有効化
+			glyph.autoHint()
+
 	# 大文字を小文字に(リファレンス)コピーする
 	if ( "yes" == isAssignLower):
 		for i in range(0, 26):
@@ -86,10 +95,12 @@ def main():
 
 	# 半角スペース作成
 	glyphSpace = font.createChar(0x0020)
+	glyph.vwidth = 1000
 	glyphSpace.width = width
 
 	# 全角スペース作成
 	glyphSpace = font.createChar(0x3000)
+	glyph.vwidth = 1000
 	glyphSpace.width = 1000
 
 	font.os2_use_typo_metrics = True
@@ -123,16 +134,6 @@ def main():
 	font.round()
 	# アウトラインの向きを修正
 	font.correctDirection()
-
-	font.selection.none()
-	font.selection.select(("ranges",None), 0x0020, 0x007e)
-	for glyph in font.selection.byGlyphs:
-		# 自動ヒント有効化
-		glyph.autoHint()
-
-		# 半角文字の文字幅設定
-		glyph.vwidth = 1000
-		glyph.width = width
 
 	# フォント情報設定
 	font.fontname = fontName
