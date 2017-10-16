@@ -5,5 +5,7 @@ A B C D E F G
 H I J K L M N
 O P Q R S T U
 V W X Y Z
-
+u---- u---- u---- u---- u16d6
+u16ba u16c1 u16b7 u16b2 u---- u16dc
+u---- u---- u---- u---- u16a6
 
