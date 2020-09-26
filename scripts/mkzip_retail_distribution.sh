@@ -77,6 +77,9 @@ fi
 if [ "free" = $Kind ] ; then
 	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_Pro"*".otf" > /dev/null
 	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_SerifEx"*".otf" > /dev/null
+	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_BlackLetter"*".otf" > /dev/null
+	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_Rounded"*".otf" > /dev/null
+	rm -rf ${nameZip}"/fonts/"${FontSeriesName}"_VLine"*".otf" > /dev/null
 fi
 
 # build .ttf fonts
