@@ -25,11 +25,11 @@ def get_gasp():
 
 
 if (2 != len(sys.argv)):
-	print 'Usage: # fontforge --script %s fontfile_path' % sys.argv[0]
+	print('Usage: # fontforge --script %s fontfile_path' % sys.argv[0])
 	quit()
 
 target_font_path = sys.argv[1]
-print "target:" + target_font_path
+print("target:" + target_font_path)
 target_font_name = os.path.basename(target_font_path)
 target_font_name, ext = os.path.splitext(target_font_name)
 font = fontforge.open(target_font_path)
