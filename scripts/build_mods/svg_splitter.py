@@ -249,6 +249,8 @@ def ravelGroup(dstsTable, settings, svgGroup):
 			dstsTable = ravelPolyline(dstsTable, settings, elem)
 		elif '{http://www.w3.org/2000/svg}circle' == elem.tag:
 			dstsTable = ravelCircle(dstsTable, settings, elem)
+		elif '{http://www.w3.org/2000/svg}ellipse' == elem.tag:
+			dstsTable = ravelEllipse(dstsTable, settings, elem)
 		else:
 			print("other tag:" + elem.tag)
 	return dstsTable
@@ -477,7 +479,37 @@ def ravelCircle(dstsTable, settings, svgCircle):
 	
 	dstsTable[row][col]['svg'].append(svgCircle)
 	return dstsTable
+"""
+"""
+def ravelEllipse(dstsTable, settings, svgCircle):
+	svgTransform = svgCircle.get('transform')
+	if svgTransform:
+		print('warning: not inplement transform attr.')
 
+	cx = float(svgCircle.get('cx'))
+	cy = float(svgCircle.get('cy'))
+	rx = float(svgCircle.get('rx'))
+	ry = float(svgCircle.get('ry'))
+	#r = float(svgCircle.get('r'))
+	
+	col = int(cx // settings['width'])
+	row = int(cy // settings['height'])
+
+	cx += -1 * col * settings['width']
+	cy += -1 * row * settings['height']
+
+	svgCircle.set('cx', str(cx))
+	svgCircle.set('cy', str(cy))
+	svgCircle.set('rx', str(rx))
+	svgCircle.set('ry', str(ry))
+	
+	svgCircle.set('transform', '') # temp
+
+	if not svgInitOnTable(dstsTable, row, col):
+		return dstsTable
+	
+	dstsTable[row][col]['svg'].append(svgCircle)
+	return dstsTable
 
 """
 @brief 要素からtaransform/matrix属性を検出して、その値を返す
